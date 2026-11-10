@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Random Cats</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Random cat pictures, on demand.">
+  <meta name="color-scheme" content="dark">
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#131217">
+
+  <!-- iOS standalone app -->
+  <link rel="apple-touch-icon" href="./icons/icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cats">
+
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="offline-badge" hidden>Offline — showing saved cats</div>
+
+  <main id="stage">
+    <img id="cat" alt="A random cat" decoding="async">
+    <div id="spinner" hidden aria-hidden="true"></div>
+    <p id="error" hidden>
+      Couldn’t load a cat.
+      <button id="retry" type="button">Try again</button>
+    </p>
+  </main>
+
+  <button id="new-cat" type="button">New cat 🐾</button>
+
+  <div id="ios-hint" hidden>
+    <span>Install on your iPhone: tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</span>
+    <button id="hint-close" type="button" aria-label="Dismiss hint">✕</button>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
